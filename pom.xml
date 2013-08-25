@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>1.0</modelVersion>
+	<artifactId>MakeItWeb</artifactId>
+	<groupId>com.jaffer.makeitweb</groupId>
+	<version>1.1</version>
+
+
+	<build>
+		<finalName>MakeItWeb</finalName>
+		<plugins>
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>yuicompressor-maven-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+					<nosuffix>true</nosuffix>
+					<jswarn>false</jswarn>
+				</configuration>
+				
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>server-lib/</classpathPrefix>
+							<mainClass>com.jaffer.makeitweb.Main</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+
+</project>
